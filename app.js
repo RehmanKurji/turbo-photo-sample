@@ -17,12 +17,8 @@ var express = require("express"),
 		indexRoutes = require("./routes/index");
 
 //seedDB();
-//console.log(process.env.DATABASEURL);
-
-mongoose.connect(process.env.DATABASEURL, {
-//mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true, useUnifiedTopology:true});
-//mongoose.connect("mongodb://localhost/yelp_camp", {
-//mongoose.connect("mongodb+srv://RehmanKurji:testing786@cluster0.7fgce.mongodb.net/yelp_camp?retryWrites=true&w=majority",{
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp"
+mongoose.connect(url, {
 	useNewUrlParser: true, 
 	useUnifiedTopology:true, 
 	useCreateIndex: true
